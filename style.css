@@ -12,7 +12,6 @@ div#zentai{
 	grid-auto-rows: 250px 200px; 
 	grid-gap: 10px;   
 	width: 1024px;
-    background: ;
 }
 div#zentai > div {
     background: #ffffff;
