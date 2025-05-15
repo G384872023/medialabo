@@ -1,6 +1,7 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
 function print(data) {
+  
 console.log(" 国名"+data.sys.country);
 console.log("都市名"+data.name);
 console.log("緯度"+data.coord.lat);
@@ -12,7 +13,25 @@ console.log("湿度"+data.main.humidity);
 console.log("風速"+data.wind.speed);
 console.log("風向"+data.wind.deg);
 console.log("時間帯"+data.timezone);
+
+
 }
+let b = document.querySelector('button#btn');
+b.addEventListener('click', showSelectResult);
+
+function showSelectResult() {
+  let s = document.querySelector('select#kuni');
+  let idx = s.selectedIndex;  // idx 番目の option が選択された
+
+  let os = s.querySelectorAll('option');  // s の子要素 option をすべて検索
+  let o = os.item(idx);       // os の idx 番目の要素
+
+  console.log('選択された ' + idx + ' 番目の option の情報:');
+  console.log('  value=' + o.getAttribute('value'));  // id 属性を表示
+  console.log('  textContent='+o.textContent);
+}
+
+
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
