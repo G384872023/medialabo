@@ -1,7 +1,7 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
 function print(data) {
-  
+
 console.log(" 国名"+data.sys.country);
 console.log("都市名"+data.name);
 console.log("緯度"+data.coord.lat);
@@ -35,7 +35,55 @@ function showSelectResult() {
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
+  let d=document.createElement('div');
 
+  let kuni=document.createElement('ul');
+  kuni.textContent=("国名:"+data.sys.country);
+  d.insertAdjacentElement('beforeend',kuni);
+  
+  let toshi=document.createElement('ul');
+  toshi.textContent=("都市名:"+data.name);
+  d.insertAdjacentElement('beforeend',toshi);
+  
+  let ido=document.createElement('ul');
+  ido.textContent=("緯度"+data.coord.lat);
+  d.insertAdjacentElement('beforeend',ido);
+
+  let keido=document.createElement('ul');
+  keido.textContent=("軽度"+data.coord.lon);
+  d.insertAdjacentElement('beforeend',keido);
+
+  let tenki=document.createElement('ul');
+  tenki.textContent=("天気"+data.weather[0].description);
+  d.insertAdjacentElement('beforeend',tenki);
+
+  let max=document.createElement('ul');
+  max.textContent=("最高気温"+data.main.temp_max);
+  d.insertAdjacentElement('beforeend',max);
+
+  let min=document.createElement('ul');
+  min.textContent=("最低気温"+data.main.temp_min);
+  d.insertAdjacentElement('beforeend',min);
+
+  let shitsudo=document.createElement('ul');
+  shitsudo.textContent=("湿度"+data.main.humidity);
+  d.insertAdjacentElement('beforeend',shitsudo);
+
+  let husoku=document.createElement('ul');
+  husoku.textContent=("風速"+data.wind.speed);
+  d.insertAdjacentElement('beforeend',husoku);
+
+  let muki=document.createElement('ul');
+  muki.textContent=("風向"+data.wind.deg);
+  d.insertAdjacentElement('beforeend',muki);
+  
+  let zikantai=document.createElement('ul');
+  zikantai.textContent=("時間帯"+data.timezone);
+  d.insertAdjacentElement('beforeend',zikantai);
+
+  d.setAttribute('id','result');
+  B=document.querySelector('button');
+  B.insertAdjacentElement('afterend',d);
 }
 
 // 課題5-1 のイベントハンドラの定義
